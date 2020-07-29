@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import './index.scss'
+import { Container } from '@material-ui/core';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Container maxWidth="lg">
+      <App />
+    </Container>
   </React.StrictMode>,
   document.getElementById('root')
 );
-serviceWorker.unregister();
