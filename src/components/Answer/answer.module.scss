@@ -1,0 +1,36 @@
+.section {
+    padding-top: 1%;
+    width: 1110px;
+    margin: 0 auto;
+}
+.wrapper {
+    background-color: #303030;
+    border-radius: 5px;
+    display: grid;
+    padding: 20px;
+    grid-gap: 5%;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "img title title title title"
+      "img player player player player"
+      "img player player player player";
+}
+.img__container {
+    grid-area: img;
+    img {
+        border-radius: 8px;
+    }
+}
+.title__container {
+    grid-area: title;
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+}
+.player__container {
+    grid-area: player;
+    padding-bottom: 30px;
+    audio {
+        width: 100%;
+    }
+}

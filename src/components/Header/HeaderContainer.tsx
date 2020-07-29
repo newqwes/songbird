@@ -1,13 +1,15 @@
 import React from 'react';
-import styles from './header.module.scss'
+import styles from './header.module.scss';
+import HeaderTitle from './HeaderTitle';
+import HeaderProgress from './HeaderProgress';
 
 const HeaderContainer: React.FC = () => {
-    return <header className={styles.header} >
-        <div className={styles.header__title}>
-            <div className={styles.logo}>Song<span>Bird</span></div>
-            <div>Score: 0</div>
-        </div>
-    </header>
+    return (
+        <header className={styles.wrapper} >
+            <HeaderTitle />
+            <HeaderProgress />
+        </header>
+    )
 }
 export default HeaderContainer;
 
