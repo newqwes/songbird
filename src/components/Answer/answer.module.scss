@@ -2,6 +2,10 @@
     padding-top: 1%;
     width: 1110px;
     margin: 0 auto;
+    @media (max-width: 1100px) {
+        padding: 2%;
+        width: auto;
+    }
 }
 .wrapper {
     background-color: #303030;
@@ -15,23 +19,48 @@
       "img title title title title"
       "img player player player player"
       "img player player player player";
+      @media (max-width: 700px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        text-align: center;
+        grid-template-areas: 
+        "title"
+        "img"
+        "player";
+    }
 }
 .img__container {
     grid-area: img;
     img {
         border-radius: 8px;
         height: 150px;
+        @media (max-width: 500px) {
+            height: 100px;
+        }
     }
 }
 .title__container {
     grid-area: title;
     font-size: 2rem;
     letter-spacing: 0.5rem;
+    @media (max-width: 700px) {
+        font-size: 1.8rem;
+        h3 {
+            margin: 0;
+        }
+    }
 }
 .player__container {
     grid-area: player;
     padding-bottom: 30px;
     audio {
         width: 100%;
+        @media (max-width: 700px) {
+            width: 70%;
+        }
+        @media (max-width: 500px) {
+            width: 100%;
+        }
     }
+    
 }
