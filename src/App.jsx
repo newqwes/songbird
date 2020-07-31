@@ -3,33 +3,34 @@ import HeaderContainer from './components/Header/HeaderContainer';
 import AnswerContainer from './components/Answer/AnswerContainer';
 import QuestionContainer from './components/Question/QuestionContainer';
 
-const App: React.FC = () => {
-
-  let warmUp = {
-      global: 'Разминка',
-      cn: {
+const App = () => {
+  const chinaAudio = require('./assets/saundLanguage/China.mp3');
+  let stateTrener = [
+      {
+        language: 'Китайский',
         id: 0,
-        languageName: 'Китайский',
-        audio: '../../assets/saundLanguage/china.mp3',
+        isSelected: true,
+        audio: chinaAudio,
         flag: '../../assets/img/defFlag.jpg',
         titleDesc: 'Путунхуа (общепринятое название)',
         textDesc: 'Общепринятый нормативный китайский, или общенациональный язык путунхуа, основан на диалекте Пекина (иначе Бейцзина, как по настоянию китайцев стало воспроизводиться на Западе название столицы Китая).'
       },
-      ru: {
+      {
+        language: 'Русский',
         id: 1,
-        languageName: 'Русский',
-        audio: '../../assets/saundLanguage/china.mp3',
+        isSelected: false,
+        audio: '../../assets/saundLanguage/italian.mp3',
         flag: '../../assets/img/defFlag.jpg',
-        titleDesc: 'Русский мяу (общепринятое название)',
-        textDesc: 'Общепринятый нормативный китайский, или общенациональный язык путунхуа, основан на диалекте Пекина (иначе Бейцзина, как по настоянию китайцев стало воспроизводиться на Западе название столицы Китая).'
-      },
-    }
+        titleDesc: 'Русский (общепринятое название)',
+        textDesc: 'Общепринятый Русский китайский, или общенациональный язык путунхуа, основан на диалекте Пекина (иначе Бейцзина, как по настоянию китайцев стало воспроизводиться на Западе название столицы Китая).'
+      }
+    ]
 
   return (
     <>
       <HeaderContainer />
-      <AnswerContainer />
-      <QuestionContainer />
+      <AnswerContainer  />
+      <QuestionContainer stateTrener={stateTrener}/>
     </>
   )
 }

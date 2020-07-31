@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './header.module.scss'
 
-const HeaderProgress: React.FC = () => {
+const HeaderProgress = () => {
     return (
         <section className={styles.header__progress}>
             <ul className={styles.progress__ul}>

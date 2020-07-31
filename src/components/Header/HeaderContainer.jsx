@@ -4,7 +4,7 @@ import HeaderTitle from './HeaderTitle';
 import HeaderProgress from './HeaderProgress';
 
 
-const HeaderContainer: React.FC = () => {
+const HeaderContainer = () => {
     return (
         <header className={styles.wrapper} >
             <HeaderTitle />

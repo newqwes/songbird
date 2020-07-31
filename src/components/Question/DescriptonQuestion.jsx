@@ -2,8 +2,8 @@ import React from 'react';
 import styles from './question.module.scss';
 import imgFlagChina from '../../assets/img/China.svg';
 
-const china = require("../../assets/saundLanguage/china.mp3");
-const DescriptonQuestion: React.FC = () => {
+const DescriptonQuestion = (props) => {
+
     return (
         <>
             <div className={styles.description__img}>
@@ -13,7 +13,7 @@ const DescriptonQuestion: React.FC = () => {
                 <h3>Китайский язык</h3>
                 <p>Путунхуа (общепринятое название)</p>
                 <audio controls
-                    src={china}>
+                    src={props.stateTrener[0].audio}>
                 </audio>
             </div>
             <p>Общепринятый нормативный китайский, или общенациональный язык путунхуа, основан на диалекте Пекина (иначе Бейцзина, как по настоянию китайцев стало воспроизводиться на Западе название столицы Китая).</p>

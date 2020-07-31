@@ -2,8 +2,9 @@ import React from 'react';
 import styles from './answer.module.scss';
 import defFlag from '../../assets/img/defFlag.jpg';
 
-const china = require("../../assets/saundLanguage/china.mp3");
-const AnswerContainer: React.FC = () => {
+const AnswerContainer = (props) => {
+
+const china = require("../../assets/saundLanguage/China.mp3");
     return (
         <section className={styles.section}>
             <div className={styles.wrapper}>
