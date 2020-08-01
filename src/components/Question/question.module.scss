@@ -57,7 +57,6 @@
         list-style-type: none;
         margin: 0;
         line-height: 2.8rem;
-        padding: 10px;
         transition: 0.1s ease;
         &:hover {
             background-color: #555;
@@ -146,4 +145,11 @@
         grid-area: player__p;
         font-size: 1.4rem;
     }
+}
+
+.link {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 10px;
 }
