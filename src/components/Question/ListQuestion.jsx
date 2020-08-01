@@ -4,9 +4,14 @@ import { Link } from 'react-router-dom';
 
 const ListQuestion = (props) => {
     let linkElements = props.stateTrener
-        .map(n => <li key={n.id} className={n.isSelected && styles.list_active}>
-            <Link to={`/${n.id}`} onClick={ () => props.clickLinkLanguage(n.id)} className={styles.link}><span></span>{n.language}</Link>
-        </li>);
+        .map(n => n.isSelected
+            ? <li key={n.id} className={styles.list_active}>
+                <div className={styles.link}><span></span>{n.language}</div>
+            </li>
+            : <li key={n.id} className={ n.pinColorWin ? styles.list_win : '' }>
+            <Link to={`/${n.id}`} onClick={() => props.clickLinkLanguage(n.id)} className={ styles.link }><span></span>{n.language}</Link>
+        </li>
+        );
     return (
         <ul>
             {linkElements}

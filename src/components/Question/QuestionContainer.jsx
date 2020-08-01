@@ -14,7 +14,11 @@ const QuestionContainer = (props) => {
                     <DescriptonQuestion stateTrener={props.stateTrener}/>
                 </div>
                 <div className={styles.button__container}>
-                    <button>Следующий уровень</button>
+                    {props.isGuessed 
+                    ? <button className={styles.buttonNextLevel} onClick={ props.clickNextLevel } >Ура! Доступен следующий уровень!</button>
+                    : <button>Следующий уровень не доступен</button>
+                }
+                    
                 </div>
             </div>
         </section>

@@ -1,5 +1,5 @@
 import rerenderET from "./render";
-import { stateTrener } from "./redux/store";
+import { state } from "./redux/store";
 
 
-rerenderET(stateTrener);
+rerenderET(state[0]);

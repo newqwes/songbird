@@ -4,11 +4,11 @@ import HeaderTitle from './HeaderTitle';
 import HeaderProgress from './HeaderProgress';
 
 
-const HeaderContainer = () => {
+const HeaderContainer = (props) => {
     return (
         <header className={styles.wrapper} >
-            <HeaderTitle />
-            <HeaderProgress />
+            <HeaderTitle score={props.score} />
+            <HeaderProgress level={props.level} levelName={props.levelName} />
         </header>
     )
 }

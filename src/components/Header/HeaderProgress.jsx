@@ -1,19 +1,16 @@
 import React from 'react';
 import styles from './header.module.scss'
 
-const HeaderProgress = () => {
+const HeaderProgress = (props) => {
+
+let levelsTitle = props.levelName.map(n => <li key={props.levelName.indexOf(n)} className={`${styles.progress__li}  ${props.level===props.levelName.indexOf(n) ? styles.progress__li_active : styles.progress__li}`}>{n}</li>)
+
     return (
         <section className={styles.header__progress}>
             <ul className={styles.progress__ul}>
-                <li className={`${styles.progress__li} ${styles.progress__li_active}`}>Разминка</li>
-                <li className={styles.progress__li}>Словянские</li>
-                <li className={styles.progress__li}>Европейские</li>
-                <li className={styles.progress__li}>Азиатские</li>
-                <li className={styles.progress__li}>Африканские</li>
-                <li className={styles.progress__li}>Фантастические</li>
+                {levelsTitle}
             </ul>
         </section>
     )
 }
 export default HeaderProgress;
-

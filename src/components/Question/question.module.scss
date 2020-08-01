@@ -78,8 +78,15 @@
         }
     }
     .list_active {
+        text-decoration: line-through;
         span {
             background-color: #d62c1a;
+        }
+    }
+    .list_win {
+        text-decoration: none;
+        span {
+            background-color: rgb(86, 207, 38);
         }
     }
 }
@@ -152,4 +159,31 @@
     color: #fff;
     display: block;
     padding: 10px;
+}
+
+@keyframes bounce {
+    from {
+      animation-timing-function: ease-out;
+      transform: rotate(0);
+    }
+    25% {
+      animation-timing-function: ease-in;
+      transform: rotate(-5deg);
+    }
+    50% {
+      animation-timing-function: ease-out;
+      transform: rotate(5deg);
+    }
+    75% {
+      animation-timing-function: ease-in;
+      transform: rotate(-5deg);
+    }
+    to {
+        transform: rotate(0);
+    }
+  }
+
+  .button__container .buttonNextLevel{
+    animation: bounce 0.5s 2 ease-in-out;
+    background: rgb(62, 119, 24);
 }

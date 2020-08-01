@@ -6,9 +6,9 @@ import QuestionContainer from './components/Question/QuestionContainer';
 const App = (props) => {
   return (
     <>
-      <HeaderContainer />
-      <AnswerContainer  />
-      <QuestionContainer stateTrener={props.stateTrener} clickLinkLanguage={props.clickLinkLanguage}/>
+      <HeaderContainer score={props.score} level={props.level} levelName={props.levelName} />
+      <AnswerContainer {...props}/>
+      <QuestionContainer stateTrener={props.stateTrener} clickLinkLanguage={props.clickLinkLanguage} clickNextLevel={props.clickNextLevel} isGuessed={props.isGuessed} />
     </>
   )
 }
