@@ -8,11 +8,16 @@ const QuestionContainer = (props) => {
         <section className={styles.section}>
             <div className={styles.wrapper}>
                 <div className={styles.ul__container}>
-                    <ListQuestion state={props.state} clickLinkLanguage={props.clickLinkLanguage}/>
+                    <ListQuestion level={props.level} state={props.state} clickLinkLanguage={props.clickLinkLanguage}/>
                 </div>
-                <div className={styles.descripton__container}>
-                    <DescriptonQuestion state={props.state}/>
-                </div>
+                {props.cleanDescQues 
+                ? <div className={styles.descripton__container}>
+                <h2>Выберите один из вариантов ответа!</h2>
+            </div>
+                : <div className={styles.descripton__container}>
+                <DescriptonQuestion level={props.level} state={props.state}/>
+            </div>
+                }
                 <div className={styles.button__container}>
                     {props.isGuessed 
                     ? <button className={styles.buttonNextLevel} onClick={ props.clickNextLevel } >Ура! Доступен следующий уровень!</button>

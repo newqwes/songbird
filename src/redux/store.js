@@ -1,5 +1,6 @@
-import rerenderET from '../render';
-
+let rerenderET = () => {
+  console.log('s');
+}
 export let state = [
   [
     {
@@ -133,26 +134,33 @@ export let isGuessed = false;
 export let score = 4;
 export let level = 0;
 let newLevel = 0;
+export let cleanDescQues = true;
 
 export let randomGenerator = () => Math.floor(Math.random() * state[level].length);
 export let randomQuestion = randomGenerator();
 
 export let clickLinkLanguage = (id) => {
+  cleanDescQues = false
   if (randomQuestion === id) {
     score += 5;
     isGuessed = true;
     state[level][id].pinColorWin = true;
     newLevel += 1;
-    return rerenderET(state[level]);
+    return rerenderET(state);
   }
-  if (isGuessed) return rerenderET(state[level]);
+  if (isGuessed) return rerenderET(state);
   score -= 1;
   state[level][id].isSelected = true
-  rerenderET(state[level]);
+  rerenderET(state);
 }
 export let clickNextLevel = () => {
+  cleanDescQues = true
   isGuessed = false
   level = newLevel;
   randomQuestion = randomGenerator();
-  return rerenderET(state[level]);
+  return rerenderET(state);
+}
+
+export const subscribe = (observer) => {
+  rerenderET = observer
 }
