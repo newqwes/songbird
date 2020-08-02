@@ -6,8 +6,8 @@ import QuestionContainer from './components/Question/QuestionContainer';
 const App = (props) => {
   return (
     <>
-      <HeaderContainer score={props.score} level={props.level} levelName={props.levelName} />
-      <AnswerContainer {...props}/>
+      <HeaderContainer score={props.state.score} level={props.state.level} levelName={props.state.levelName} />
+      <AnswerContainer state={props.state}/>
       <QuestionContainer {...props} />
     </>
   )

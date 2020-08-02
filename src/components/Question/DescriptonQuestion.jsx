@@ -5,7 +5,7 @@ import { Route } from 'react-router-dom';
 
 const DescriptonQuestion = (props) => {
     return (<> {
-        props.state[props.level]
+        props.dataLanguage[props.level]
             .map(n =>
                 <Route key={n.id} path={`/${n.id}`}>
                     <div className={styles.description__img}>
