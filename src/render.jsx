@@ -9,7 +9,7 @@ let rerenderET = (state) => {
   ReactDOM.render(
     <React.StrictMode>
       <Router>
-        <App stateTrener={state} clickNextLevel={clickNextLevel} clickLinkLanguage={clickLinkLanguage} randomQuestion={randomQuestion} isGuessed={isGuessed} score={score} level= {level} levelName={levelName} />
+        <App state={state} clickNextLevel={clickNextLevel} clickLinkLanguage={clickLinkLanguage} randomQuestion={randomQuestion} isGuessed={isGuessed} score={score} level= {level} levelName={levelName} />
       </Router>
     </React.StrictMode>,
     document.getElementById('root')

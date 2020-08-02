@@ -9,18 +9,18 @@ const AnswerContainer = (props) => {
             <div className={styles.wrapper}>
                 <div className={styles.img__container}>
                     <img src={props.isGuessed 
-                    ? props.stateTrener[props.randomQuestion].flag
+                    ? props.state[props.randomQuestion].flag
                     : defFlag
                 } alt="" />
                 </div>
                 <div className={styles.title__container}>
                     <h3>{props.isGuessed 
-                    ? props.stateTrener[props.randomQuestion].language
+                    ? props.state[props.randomQuestion].language
                     : '********'
                 }</h3>
                 </div>
                 <div className={styles.player__container}>
-                    <audio controls src={props.stateTrener[props.randomQuestion].audio}></audio>
+                    <audio controls src={props.state[props.randomQuestion].audio}></audio>
                 </div>
             </div>
         </section>

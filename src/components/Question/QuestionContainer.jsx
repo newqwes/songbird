@@ -8,10 +8,10 @@ const QuestionContainer = (props) => {
         <section className={styles.section}>
             <div className={styles.wrapper}>
                 <div className={styles.ul__container}>
-                    <ListQuestion stateTrener={props.stateTrener} clickLinkLanguage={props.clickLinkLanguage}/>
+                    <ListQuestion state={props.state} clickLinkLanguage={props.clickLinkLanguage}/>
                 </div>
                 <div className={styles.descripton__container}>
-                    <DescriptonQuestion stateTrener={props.stateTrener}/>
+                    <DescriptonQuestion state={props.state}/>
                 </div>
                 <div className={styles.button__container}>
                     {props.isGuessed 

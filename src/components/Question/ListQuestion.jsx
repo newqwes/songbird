@@ -3,7 +3,7 @@ import styles from './question.module.scss';
 import { Link } from 'react-router-dom';
 
 const ListQuestion = (props) => {
-    let linkElements = props.stateTrener
+    let linkElements = props.state
         .map(n => n.isSelected
             ? <li key={n.id} className={styles.list_active}>
                 <div className={styles.link}><span></span>{n.language}</div>

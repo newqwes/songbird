@@ -8,7 +8,7 @@ const App = (props) => {
     <>
       <HeaderContainer score={props.score} level={props.level} levelName={props.levelName} />
       <AnswerContainer {...props}/>
-      <QuestionContainer stateTrener={props.stateTrener} clickLinkLanguage={props.clickLinkLanguage} clickNextLevel={props.clickNextLevel} isGuessed={props.isGuessed} />
+      <QuestionContainer {...props} />
     </>
   )
 }
