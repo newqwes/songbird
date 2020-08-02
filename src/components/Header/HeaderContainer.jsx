@@ -4,7 +4,7 @@ import HeaderTitle from './HeaderTitle';
 import HeaderProgress from './HeaderProgress';
 
 
-const HeaderContainer = (props) => {
+export default (props) => {
     return (
         <header className={styles.wrapper} >
             <HeaderTitle score={props.score} />
@@ -12,5 +12,4 @@ const HeaderContainer = (props) => {
         </header>
     )
 }
-export default HeaderContainer;
 

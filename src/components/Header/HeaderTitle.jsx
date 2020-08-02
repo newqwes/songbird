@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './header.module.scss'
 
-const HeaderTitle = (props) => {
+export default (props) => {
     return (
         <section className={styles.title}>
             <div className={styles.logo}>Song<span>Language</span></div>
@@ -12,5 +12,5 @@ const HeaderTitle = (props) => {
     )
 
 }
-export default HeaderTitle;
+
 

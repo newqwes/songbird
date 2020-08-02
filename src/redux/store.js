@@ -1,3 +1,5 @@
+import appReducer from './appReducer';
+
 export default {
   _state: {
     dataLanguage: [
@@ -137,59 +139,15 @@ export default {
   getState() {
     return this._state
   },
-  randomGenerator() {
-    return Math.floor(Math.random() * this._state.dataLanguage[this._state.level].length)
-  },
   rerenderET() {
 
   },
   subscribe(observer) {
     this.rerenderET = observer
   },
-
-  clickLinkLanguage(id) {
-    this._state.cleanDescQues = false
-    if (this._state.randomQuestionNumber === id) {
-      this._state.score += 5;
-      this._state.isGuessed = true;
-      this._state.dataLanguage[this._state.level][id].pinColorWin = true;
-      this._state.newLevel += 1;
-      return this.rerenderET(this._state);
-    }
-    if (this._state.isGuessed) return this.rerenderET(this._state);
-    this._state.score -= 1;
-    this._state.dataLanguage[this._state.level][id].isSelected = true
-    this.rerenderET(this._state);
-  },
-  clickNextLevel() {
-    this._state.cleanDescQues = true
-    this._state.isGuessed = false
-    this._state.level = this._state.newLevel;
-    this._state.randomQuestionNumber = this.randomGenerator();
-    return this.rerenderET(this._state);
-  },
   dispatch(action) {
-    if (action.type === 'CLICK_LINK_LANGUAGE') {
-      this._state.cleanDescQues = false
-      if (this._state.randomQuestionNumber === action.id) {
-        this._state.score += 5;
-        this._state.isGuessed = true;
-        this._state.dataLanguage[this._state.level][action.id].pinColorWin = true;
-        this._state.newLevel += 1;
-        return this.rerenderET(this._state);
-      }
-      if (this._state.isGuessed) return this.rerenderET(this._state);
-      this._state.score -= 1;
-      this._state.dataLanguage[this._state.level][action.id].isSelected = true
-      this.rerenderET(this._state);
-    }
-      else if (action.type === 'CLICK_NEXT_LEVEL') {
-        this._state.cleanDescQues = true
-        this._state.isGuessed = false
-        this._state.level = this._state.newLevel;
-        this._state.randomQuestionNumber = this.randomGenerator();
-        return this.rerenderET(this._state);
-    }
+    this._state = appReducer(this._state, action);
+    this.rerenderET(this._state);
   }
-
 }
+

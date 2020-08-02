@@ -9,7 +9,7 @@ let rerenderET = (state) => {
   ReactDOM.render(
     <React.StrictMode>
       <Router>
-        <App state={state} dispatch={store.dispatch.bind(store)} clickNextLevel={store.clickNextLevel.bind(store)} clickLinkLanguage={store.clickLinkLanguage.bind(store)}/>
+        <App state={state} dispatch={store.dispatch.bind(store)}/>
       </Router>
     </React.StrictMode>,
     document.getElementById('root')

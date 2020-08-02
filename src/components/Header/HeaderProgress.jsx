@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './header.module.scss'
 
-const HeaderProgress = (props) => {
+export default (props) => {
 
 let levelsTitle = props.levelName.map(n => <li key={props.levelName.indexOf(n)} className={`${styles.progress__li}  ${props.level===props.levelName.indexOf(n) ? styles.progress__li_active : styles.progress__li}`}>{n}</li>)
 
@@ -13,4 +13,3 @@ let levelsTitle = props.levelName.map(n => <li key={props.levelName.indexOf(n)} 
         </section>
     )
 }
-export default HeaderProgress;

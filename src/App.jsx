@@ -3,7 +3,7 @@ import HeaderContainer from './components/Header/HeaderContainer';
 import AnswerContainer from './components/Answer/AnswerContainer';
 import QuestionContainer from './components/Question/QuestionContainer';
 
-const App = (props) => {
+export default (props) => {
   return (
     <>
       <HeaderContainer score={props.state.score} level={props.state.level} levelName={props.state.levelName} />
@@ -12,5 +12,3 @@ const App = (props) => {
     </>
   )
 }
-
-export default App;
