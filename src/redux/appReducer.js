@@ -1,3 +1,4 @@
+
 const CLICK_LINK_LANGUAGE = 'CLICK_LINK_LANGUAGE';
 const CLICK_NEXT_LEVEL = 'CLICK_NEXT_LEVEL';
 const NEW_GAME = 'NEW_GAME';
@@ -383,6 +384,7 @@ export default (state = initialState, action) => {
     switch (action.type) {
         case CLICK_LINK_LANGUAGE:
             state.cleanDescQues = false;
+
             if (state.isGuessed) return state;
             if (state.randomQuestionNumber === action.id) {
                 state.score += 5;
@@ -424,7 +426,7 @@ export default (state = initialState, action) => {
                 s.isSelected = false;
                 s.pinColorWin = false;
                 return s;
-            } ))
+            }))
             return state;
 
         default: return state;

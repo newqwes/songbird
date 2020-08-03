@@ -15,18 +15,18 @@
     grid-gap: 5%;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto;
-    grid-template-areas: 
-      "img title title title title"
-      "img player player player player"
-      "img player player player player";
-      @media (max-width: 700px) {
+    grid-template-areas:
+        "img title title title title"
+        "img player player player player"
+        "img player player player player";
+    @media (max-width: 700px) {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         text-align: center;
-        grid-template-areas: 
-        "title"
-        "img"
-        "player";
+        grid-template-areas:
+            "title"
+            "img"
+            "player";
     }
 }
 .img__container {
@@ -52,15 +52,15 @@
 }
 .player__container {
     grid-area: player;
-    padding-bottom: 30px;
-    audio {
-        width: 100%;
-        @media (max-width: 700px) {
-            width: 70%;
-        }
-        @media (max-width: 500px) {
-            width: 100%;
-        }
+    position: relative;
+    padding-top: 10%;
+    @media (max-width: 700px) {
+        padding-top: 20%;
+        text-align: center;
     }
-    
+}
+.player {
+    position: absolute;
+    top: 0;
+    left: 0;
 }

@@ -12,7 +12,7 @@ export default (props) => {
         <section className={styles.section}>
             <div className={styles.wrapper}>
                 <div className={styles.ul__container}>
-                    <ListQuestion dispatch={props.dispatch} level={props.state.level} dataLanguage={props.state.dataLanguage}/>
+                    <ListQuestion dispatch={props.dispatch} randomQuestionNumber={props.state.randomQuestionNumber} level={props.state.level} dataLanguage={props.state.dataLanguage}/>
                 </div>
                 {props.state.cleanDescQues 
                 ? <div className={styles.descripton__container}>
