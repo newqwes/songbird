@@ -9,7 +9,7 @@ let rerenderET = (state) => {
   ReactDOM.render(
     <React.StrictMode>
       <Router>
-        <App state={state} dispatch={store.dispatch.bind(store)}/>
+        <App state={state.appReducer} dispatch={store.dispatch.bind(store)}/>
       </Router>
     </React.StrictMode>,
     document.getElementById('root')
@@ -17,4 +17,7 @@ let rerenderET = (state) => {
 }
 rerenderET(store.getState());
 
-store.subscribe(rerenderET);
+store.subscribe(() => {
+  let state = store.getState();
+  rerenderET(state)
+});

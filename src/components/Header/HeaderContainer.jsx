@@ -5,6 +5,7 @@ import HeaderProgress from './HeaderProgress';
 
 
 export default (props) => {
+    
     return (
         <header className={styles.wrapper} >
             <HeaderTitle score={props.score} />
