@@ -2,10 +2,16 @@ import React from 'react';
 import styles from './question.module.scss';
 import { Link } from 'react-router-dom';
 import { clickLinkLanguageAC } from '../../redux/appReducer';
+import useSound from 'use-sound';
+
+ 
+
 
 export default (props) => {
+    const [play] = useSound(require('../../assets/clickWrong.mp3'));
     let clickLink = (id) => {
         props.dispatch(clickLinkLanguageAC(id))
+        play()
     }
     let linkElements = props.dataLanguage[props.level].map(n => n.isSelected
         ? <li key={n.id} className={styles.list_active}>
