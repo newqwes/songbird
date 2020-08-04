@@ -24,7 +24,6 @@ export default (props) => {
                 </div>
                 <div className={styles.player__container}>
                     <Player url={props.state.dataLanguage[level][randomQuestionNumber].audio} isGuessed={props.state.isGuessed} />
-
                 </div>
             </div>
         </section>
