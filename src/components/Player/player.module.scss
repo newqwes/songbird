@@ -1,0 +1,14 @@
+.player {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 30px auto 30px 100px;
+    grid-template-rows: 1fr;
+    grid-gap: 5px;
+    > * {
+        cursor: pointer;
+        &:hover {
+            transition: 0.2s ease;
+            color: rgb(104, 156, 252);
+        }
+    }
+}

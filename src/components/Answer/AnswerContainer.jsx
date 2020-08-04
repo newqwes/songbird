@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './answer.module.scss';
 import defFlag from '../../assets/img/defFlag.jpg'
-import ReactPlayer from 'react-player'
+import Player from '../Player/Player';
+
 
 export default (props) => {
     let level = props.state.level;
@@ -22,7 +23,8 @@ export default (props) => {
                     }</h3>
                 </div>
                 <div className={styles.player__container}>
-                    <ReactPlayer width='100%' height='40px' className={styles.player} controls={true} playing={!props.state.isGuessed} url={props.state.dataLanguage[level][randomQuestionNumber].audio} />
+                    <Player url={props.state.dataLanguage[level][randomQuestionNumber].audio} isGuessed={props.state.isGuessed} />
+
                 </div>
             </div>
         </section>

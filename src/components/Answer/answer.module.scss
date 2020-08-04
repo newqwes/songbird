@@ -52,15 +52,5 @@
 }
 .player__container {
     grid-area: player;
-    position: relative;
-    padding-top: 10%;
-    @media (max-width: 700px) {
-        padding-top: 20%;
-        text-align: center;
-    }
-}
-.player {
-    position: absolute;
-    top: 0;
-    left: 0;
+    width: 90%;
 }
