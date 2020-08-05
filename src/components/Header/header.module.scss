@@ -1,82 +1,82 @@
 .wrapper {
-    padding-top: 1%;
-    width: 1110px;
-    margin: 0 auto;
-    @media (max-width: 1100px) {
-        padding: 2%;
-        width: auto;
-    }
+  padding-top: 1%;
+  width: 1110px;
+  margin: 0 auto;
+  @media (max-width: 1100px) {
+    padding: 2%;
+    width: auto;
+  }
 }
 .title {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    @media (max-width: 1100px) {
-        padding: 0 5%;
-    }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  @media (max-width: 1100px) {
+    padding: 0 5%;
+  }
 }
 .logo {
-    font-family: "Ranchers", cursive;
-    cursor: default;
-    font-size: 5.5rem;
-    span {
-        color: rgb(13, 123, 226);
-    }
-    @media (max-width: 1100px) {
-        font-size: 4rem;
-    }
-    @media (max-width: 420px) {
-        font-size: 2.8rem;
-     }
+  font-family: "Ranchers", cursive;
+  cursor: default;
+  font-size: 5.5rem;
+  span {
+    color: rgb(13, 123, 226);
+  }
+  @media (max-width: 1100px) {
+    font-size: 4rem;
+  }
+  @media (max-width: 420px) {
+    font-size: 2.8rem;
+  }
 }
 .score {
-    cursor: default;
-    display: grid;
-    justify-items: end;
-    font-size: 2rem;
-    @media (max-width: 420px) {
-        font-size: 1.8rem;
-     }
+  cursor: default;
+  display: grid;
+  justify-items: end;
+  font-size: 2rem;
+  @media (max-width: 420px) {
+    font-size: 1.8rem;
+  }
 }
 .progress__ul {
-    margin: 0;
-    padding: 1% 0;
-    list-style-type: none;
-    display: grid;
-    grid-auto-flow: column;
-    @media (max-width: 700px) {
-        grid-auto-flow: row;
-    }
+  margin: 0;
+  padding: 1% 0;
+  list-style-type: none;
+  display: grid;
+  grid-auto-flow: column;
+  @media (max-width: 700px) {
+    grid-auto-flow: row;
+  }
 }
 
 .progress__li {
-    padding: 0;
-    font-size: 1.5rem;
-    background-color: rgb(13, 123, 226);
-    line-height: 3.4rem;
-    text-align: center;
-    white-space: nowrap;
-    &:first-child {
-        border-radius: 5px 0 0 5px;
-        @media (max-width: 700px) {
-            border-radius: 5px;
-         }
-    }
-    &:last-child {
-        border-radius: 0 5px 5px 0;
-        @media (max-width: 700px) {
-            border-radius: 5px;
-         }
-    }
-    &_active {
-        background-color: rgb(57, 159, 255);
-    }
+  padding: 0;
+  font-size: 1.5rem;
+  background-color: rgb(13, 123, 226);
+  line-height: 3.4rem;
+  text-align: center;
+  white-space: nowrap;
+  &:first-child {
+    border-radius: 5px 0 0 5px;
     @media (max-width: 700px) {
-       margin: 3px 10%;
-       border-radius: 5px;
-       line-height: 2.8rem;
+      border-radius: 5px;
     }
-    @media (max-width: 420px) {
-        margin: 3px 5%;
-     }
+  }
+  &:last-child {
+    border-radius: 0 5px 5px 0;
+    @media (max-width: 700px) {
+      border-radius: 5px;
+    }
+  }
+  &_active {
+    background-color: rgb(57, 159, 255);
+  }
+  @media (max-width: 700px) {
+    margin: 3px 10%;
+    border-radius: 5px;
+    line-height: 2.8rem;
+  }
+  @media (max-width: 420px) {
+    margin: 3px 5%;
+  }
 }
