@@ -17,35 +17,40 @@ class Player extends React.Component {
       nowTimeShow: 0,
       a: 0,
     };
-    this.inputProgressChange = this.inputProgressChange.bind(this);
-    this.inputVolumeChange = this.inputVolumeChange.bind(this);
-    this.buttonVolume = this.buttonVolume.bind(this);
-    this.buttonPlay = this.buttonPlay.bind(this);
+    this._isMounted = false;
   }
 
-  inputProgressChange(event) {
+  componentWillUnmount = () => {
+    this._isMounted = false;
+  };
+  componentDidMount = () => {
+    this._isMounted = true;
+  };
+  inputProgressChange = (event) => {
     this.setState({ inputProgressPlay: parseFloat(event.target.value) });
     this.player.seekTo(event.target.value, "fraction");
-  }
-  inputVolumeChange(event) {
+  };
+  inputVolumeChange = (event) => {
     this.setState({ inputProgressVolume: Number(event.target.value) });
-  }
-  buttonVolume() {
+  };
+  buttonVolume = () => {
     this.setState({ isMute: !this.state.isMute });
-  }
-  buttonPlay() {
+  };
+  buttonPlay = () => {
     this.setState({ isPlaying: !this.state.isPlaying });
-    setInterval(() => {
-      if (this.props.isGuessed) this.setState({ a: this.state.a + 1 }); // тут творится жесть!)) ловлю первую инициализацию когда только меняется isGuessed
-      if (!this.props.isGuessed) this.setState({ a: 0 }); // c false на true и сверяю если равна этому значению (это будет только
-      // единожды 100мс если точнее) тогда останавливаю плеер при следующей проверке уже не будет
-      if (this.state.a === 1) this.setState({ isPlaying: true }); // и плеером можно спокойно пользоваться
-
-      let timePlay = this.player.getCurrentTime() / this.player.getDuration();
-      this.setState({ inputProgressPlay: timePlay });
-      this.setState({ nowTimeShow: Math.round(this.player.getCurrentTime()) });
-    }, 200);
-  }
+    this._isMounted &&
+      setInterval(() => {
+        if (this.props.isGuessed) this.setState({ a: this.state.a + 1 });
+        if (!this.props.isGuessed) this.setState({ a: 0 });
+        if (this.state.a === 1) this.setState({ isPlaying: true });
+        if (!this.player) return 0;
+        let timePlay = this.player.getCurrentTime() / this.player.getDuration();
+        this.setState({ inputProgressPlay: timePlay });
+        this.setState({
+          nowTimeShow: Math.round(this.player.getCurrentTime()),
+        });
+      }, 200);
+  };
   ref = (player) => {
     this.player = player;
   };
