@@ -428,7 +428,9 @@ export default (state = initialState, action) => {
     case CLICK_LINK_LANGUAGE:
       state.cleanDescQues = false;
 
-      if (state.isGuessed) return state;
+      if (state.isGuessed) {
+        return state;
+      }
       if (state.randomQuestionNumber === action.id) {
         state.score += 5;
         state.isGuessed = true;

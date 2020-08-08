@@ -17,6 +17,7 @@ export default (props) => {
             randomQuestionNumber={props.state.randomQuestionNumber}
             level={props.state.level}
             dataLanguage={props.state.dataLanguage}
+            isGuessed={props.state.isGuessed}
           />
         </div>
         {props.state.cleanDescQues ? (

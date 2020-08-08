@@ -15,6 +15,7 @@ class Player extends React.Component {
       isPlaying: !this.props.isGuessed,
       isMute: false,
       nowTimeShow: 0,
+      getDuration: "00",
       a: 0,
     };
     this._isMounted = false;
@@ -38,6 +39,7 @@ class Player extends React.Component {
   };
   buttonPlay = () => {
     this.setState({ isPlaying: !this.state.isPlaying });
+    this.setState({ getDuration: Math.round(this.player.getDuration()) });
     this._isMounted &&
       setInterval(() => {
         if (this.props.isGuessed) this.setState({ a: this.state.a + 1 });
@@ -66,22 +68,17 @@ class Player extends React.Component {
           playing={!this.state.isPlaying}
           url={this.props.url}
         />
-        <h2 className={styles.timer}>
-          00:
-          {this.state.nowTimeShow >= 10
-            ? this.state.nowTimeShow
-            : "0" + this.state.nowTimeShow}
-        </h2>
+
         <div className={styles.player}>
           {this.state.isPlaying ? (
             <PlayCircleOutlineOutlinedIcon
               onClick={this.buttonPlay}
-              style={{ fontSize: 30 }}
+              style={{ fontSize: 45 }}
             />
           ) : (
             <PauseCircleOutlineOutlinedIcon
               onClick={this.buttonPlay}
-              style={{ fontSize: 30 }}
+              style={{ fontSize: 45 }}
             />
           )}
           <input
@@ -93,16 +90,15 @@ class Player extends React.Component {
             max='0.9999999'
             step='any'
           />
-
           {this.state.isMute ? (
             <VolumeOffIcon
               onClick={this.buttonVolume}
-              style={{ fontSize: 30 }}
+              style={{ fontSize: 40 }}
             />
           ) : (
             <VolumeUpOutlinedIcon
               onClick={this.buttonVolume}
-              style={{ fontSize: 30 }}
+              style={{ fontSize: 40 }}
             />
           )}
           <input
@@ -114,6 +110,16 @@ class Player extends React.Component {
             max='0.999999'
             step='any'
           />
+          <p className={styles.timer}>
+            00:
+            {this.state.nowTimeShow >= 10
+              ? this.state.nowTimeShow
+              : "0" + this.state.nowTimeShow}
+          </p>
+          <p className={styles.timer}>
+            00:
+            {this.state.getDuration}
+          </p>
         </div>
       </>
     );

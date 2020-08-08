@@ -15,10 +15,20 @@ export default (props) => {
   let linkElements = props.dataLanguage[props.level].map((n) =>
     n.isSelected ? (
       <li key={n.id} className={styles.list_active}>
-        <div className={styles.link}>
-          <span></span>
-          {n.language}
-        </div>
+        {props.isGuessed ? (
+          <Link
+            to={`/${n.id}`}
+            onClick={() => clickLink(n.id)}
+            className={styles.link}>
+            <span></span>
+            {n.language}
+          </Link>
+        ) : (
+          <div className={styles.link}>
+            <span></span>
+            {n.language}
+          </div>
+        )}
       </li>
     ) : (
       <li key={n.id} className={n.pinColorWin ? styles.list_win : ""}>

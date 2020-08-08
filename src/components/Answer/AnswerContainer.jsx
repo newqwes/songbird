@@ -23,7 +23,7 @@ export default (props) => {
           <h3 onClick={() => console.log("onPause")}>
             {props.state.isGuessed
               ? props.state.dataLanguage[level][randomQuestionNumber].language
-              : "Какой язык?"}
+              : "******"}
           </h3>
         </div>
         <div className={styles.player__container}>

@@ -29,6 +29,12 @@ export default (props) => {
       </div>
     );
   }
+  console.log(
+    props.state.level < 6 &&
+      props.state.dataLanguage[props.state.level][
+        props.state.randomQuestionNumber
+      ].language
+  );
   return (
     <>
       <HeaderContainer

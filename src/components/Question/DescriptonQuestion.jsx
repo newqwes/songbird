@@ -6,7 +6,6 @@ import Player from "../Player/Player";
 const DescriptonQuestion = (props) => {
   return (
     <>
-      {" "}
       {props.dataLanguage[props.level].map((n) => (
         <Route key={n.id} path={`/${n.id}`}>
           <div className={styles.description__img}>
@@ -15,13 +14,17 @@ const DescriptonQuestion = (props) => {
           <div className={styles.description__player}>
             <h3>{n.language}</h3>
             <p>{n.titleDesc}</p>
-            <div>
-            <Player url={n.audio} isGuessed={false} />
+            <div className={styles.audio}>
+              <Player
+                url={n.audio}
+                isGuessed={false}
+                DescriptonQuestion={true}
+              />
             </div>
           </div>
           <p>{n.textDesc}</p>
         </Route>
-      ))}{" "}
+      ))}
     </>
   );
 };
