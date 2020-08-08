@@ -21,7 +21,7 @@ export default (props) => {
     return (
       <div className={styles.winWrapper}>
         <h1>
-          Обсалютная победа!!! Максимальное число баллов! {props.state.score}{" "}
+          Абсолютная победа!!! Максимальное число баллов! {props.state.score}{" "}
           очков!
         </h1>
         <img src={props.state.winGifMax} alt='Mark' />

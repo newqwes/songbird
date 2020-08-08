@@ -413,7 +413,7 @@ let initialState = {
     "Фантастические",
   ],
   isGuessed: false,
-  score: 5,
+  score: 0,
   level: 0,
   newLevel: 0,
   cleanDescQues: true,
@@ -445,7 +445,7 @@ export default (state = initialState, action) => {
 
     case CLICK_NEXT_LEVEL:
       if (state.newLevel > 5) {
-        if (state.score > 34) {
+        if (state.score > 29) {
           state.youAreWin = 2;
           state.isGuessed = false;
           return state;

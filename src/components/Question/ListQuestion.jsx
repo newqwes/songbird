@@ -10,7 +10,9 @@ export default (props) => {
 
   let clickLink = (id) => {
     props.dispatch(clickLinkLanguageAC(id));
-    props.randomQuestionNumber === id ? right() : wrong();
+    if (!props.isGuessed) {
+      props.randomQuestionNumber === id ? right() : wrong();
+    }
   };
   let linkElements = props.dataLanguage[props.level].map((n) =>
     n.isSelected ? (
