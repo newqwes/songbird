@@ -463,7 +463,7 @@ export default (state = initialState, action) => {
       return state;
     case NEW_GAME:
       state.isGuessed = false;
-      state.score = 5;
+      state.score = 0;
       state.level = 0;
       state.newLevel = 0;
       state.cleanDescQues = true;
