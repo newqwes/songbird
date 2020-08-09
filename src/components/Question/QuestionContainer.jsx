@@ -36,7 +36,9 @@ export default (props) => {
         <div className={styles.button__container}>
           {props.state.isGuessed ? (
             <button className={styles.buttonNextLevel} onClick={clickNextLevel}>
-              Ура! Доступен следующий уровень!
+              {props.state.level === 5
+                ? "Завершить"
+                : "Ура! Доступен следующий уровень!"}
             </button>
           ) : (
             <button>Следующий уровень не доступен</button>
