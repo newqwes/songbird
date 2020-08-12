@@ -25,14 +25,14 @@ export default (props) => {
             <h2>Выберите один из вариантов ответа!</h2>
           </div>
         ) : (
-          <div className={styles.descripton__container}>
-            <DescriptonQuestion
-              isGuessed={props.state.isGuessed}
-              level={props.state.level}
-              dataLanguage={props.state.dataLanguage}
-            />
-          </div>
-        )}
+            <div className={styles.descripton__container}>
+              <DescriptonQuestion
+                isGuessed={props.state.isGuessed}
+                level={props.state.level}
+                dataLanguage={props.state.dataLanguage}
+              />
+            </div>
+          )}
         <div className={styles.button__container}>
           {props.state.isGuessed ? (
             <button className={styles.buttonNextLevel} onClick={clickNextLevel}>
@@ -41,8 +41,8 @@ export default (props) => {
                 : "Ура! Доступен следующий уровень!"}
             </button>
           ) : (
-            <button>Следующий уровень не доступен</button>
-          )}
+              <button>Следующий уровень недоступен!</button>
+            )}
         </div>
       </div>
     </section>
