@@ -76,11 +76,11 @@ class Player extends React.Component {
               style={{ fontSize: 45 }}
             />
           ) : (
-              <PauseCircleOutlineOutlinedIcon
-                onClick={this.buttonPlay}
-                style={{ fontSize: 45 }}
-              />
-            )}
+            <PauseCircleOutlineOutlinedIcon
+              onClick={this.buttonPlay}
+              style={{ fontSize: 45 }}
+            />
+          )}
           <input
             className={styles.input__progress}
             value={this.state.inputProgressPlay}
@@ -96,11 +96,11 @@ class Player extends React.Component {
               style={{ fontSize: 40 }}
             />
           ) : (
-              <VolumeUpOutlinedIcon
-                onClick={this.buttonVolume}
-                style={{ fontSize: 40 }}
-              />
-            )}
+            <VolumeUpOutlinedIcon
+              onClick={this.buttonVolume}
+              style={{ fontSize: 40 }}
+            />
+          )}
           <input
             className={styles.input__volume}
             onChange={this.inputVolumeChange}
