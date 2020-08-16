@@ -1,0 +1,51 @@
+.winWrapper {
+    text-align: center;
+    padding-top: 10%;
+    img {
+        width: 500px;
+        animation: bounce 0.5s infinite ease-in-out;
+        @media (max-width: 500px) {
+            width: 290px;
+        }
+    }
+    h1 {
+        text-align: center;
+        font-size: 3rem;
+        letter-spacing: 0.3rem;
+        color: rgb(0, 205, 241);
+    }
+    button {
+        margin: 40px auto;
+        display: block;
+        height: 50px;
+        width: 200px;
+        background-color: rgb(9, 123, 253);
+        border-radius: 10px;
+        font-size: 1.8rem;
+        font-weight: bold;
+        letter-spacing: 0.2rem;
+        border: 2px solid rgb(0, 38, 255);
+    }
+}
+
+@keyframes bounce {
+    from {
+        animation-timing-function: ease-out;
+        transform: rotate(0);
+    }
+    25% {
+        animation-timing-function: ease-in;
+        transform: rotate(-5deg);
+    }
+    50% {
+        animation-timing-function: ease-out;
+        transform: rotate(5deg);
+    }
+    75% {
+        animation-timing-function: ease-in;
+        transform: rotate(-5deg);
+    }
+    to {
+        transform: rotate(0);
+    }
+}

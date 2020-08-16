@@ -1,0 +1,233 @@
+.wrapper {
+  padding-top: 1%;
+  width: 1110px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 10% 2%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "ul__container descripton__container descripton__container"
+    "button__container button__container button__container";
+  @media (max-width: 1100px) {
+    padding: 2%;
+    width: auto;
+    grid-gap: 5%;
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    grid-gap: 1%;
+    text-align: center;
+    grid-template-areas:
+      "ul__container"
+      "descripton__container"
+      "button__container";
+  }
+}
+.ul__container,
+.descripton__container,
+.button__container {
+  border-radius: 5px;
+  margin-bottom: 15px;
+  button {
+    background-color: #303030;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+  }
+}
+.ul__container {
+  grid-area: ul__container;
+  font-size: 1.5rem;
+  background-color: #303030;
+  border: 1px solid #555;
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    border-bottom: 1px solid #555;
+    cursor: pointer;
+    list-style-type: none;
+    margin: 0;
+    line-height: 2.8rem;
+    transition: 0.1s ease;
+    &:hover {
+      background-color: #555;
+    }
+    &:last-child {
+      border: none;
+    }
+    span {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #444;
+      margin: 0 15px;
+    }
+    @media (max-width: 600px) {
+      text-align: left;
+    }
+  }
+  .list_active {
+    text-decoration: line-through;
+    span {
+      background-color: #d62c1a;
+    }
+  }
+  .list_win {
+    text-decoration: none;
+    span {
+      background-color: rgb(86, 207, 38);
+    }
+  }
+}
+.descripton__container {
+  grid-area: descripton__container;
+  padding: 10px;
+  background-color: #303030;
+  border: 1px solid #555;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "description__img description__player"
+    "description__p description__p";
+  p {
+    grid-area: description__p;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.1rem;
+    font-weight: 300;
+  }
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+    grid-template-areas:
+      "description__img"
+      "description__player"
+      "description__p";
+  }
+  h2 {
+    width: 100%;
+    text-align: center;
+    margin-left: 40%;
+    font-size: 3rem;
+    line-height: 4rem;
+    letter-spacing: 1rem;
+    @media (max-width: 500px) {
+      font-size: 1.8rem;
+      letter-spacing: 0.2rem;
+      margin-left: 0;
+    }
+    @media (max-width: 1000px) {
+      font-size: 2.2rem;
+      letter-spacing: 0.1rem;
+      margin-left: 0;
+    }
+  }
+}
+.button__container {
+  grid-area: button__container;
+  button {
+    width: 100%;
+  }
+}
+.description__img {
+  grid-area: description__img;
+  text-align: center;
+  img {
+    width: 250px;
+    border-radius: 10px;
+    @media (max-width: 1000px) {
+      width: 200px;
+    }
+  }
+}
+.description__player {
+  grid-area: description__player;
+  h3 {
+    grid-area: player__h3;
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+  }
+  .audio {
+    grid-area: player__audio;
+    text-align: center;
+    padding-left: 3%;
+    width: 90%;
+    input {
+      margin-left: 10px;
+    }
+    p {
+      display: none;
+    }
+    @media (max-width: 1100px) {
+      width: 80%;
+      input {
+        width: 90%;
+      }
+    }
+    @media (max-width: 600px) {
+      width: 93%;
+      input {
+        width: 100%;
+      }
+    }
+  }
+  p {
+    grid-area: player__p;
+    font-size: 1.4rem;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  padding: 10px;
+}
+
+@keyframes bounce {
+  from {
+    animation-timing-function: ease-out;
+    transform: rotate(0);
+  }
+  25% {
+    animation-timing-function: ease-in;
+    transform: rotate(-5deg);
+  }
+  50% {
+    animation-timing-function: ease-out;
+    transform: rotate(5deg);
+  }
+  75% {
+    animation-timing-function: ease-in;
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+
+.button__container .buttonNextLevel {
+  animation: bounce 0.5s 1 ease-in-out;
+  background: #0d7be2;
+}
+
+.question__rules {
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+.playerContainer {
+  width: 50%;
+}

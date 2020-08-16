@@ -1,0 +1,39 @@
+.player {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 30px auto 30px 100px;
+  grid-template-rows: 1fr;
+  grid-gap: 2%;
+  align-items: center;
+  > * {
+    cursor: pointer;
+    color: #0d7be2;
+    &:hover {
+      transition: 0.2s ease;
+      color: #399fff;
+    }
+  }
+  input[type="range"] {
+    height: 10%; /* Specific width is required for Firefox. */
+  }
+  input[type="range"]:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  }
+  @media (max-width: 400px) {
+    input {
+      width: 95%;
+      margin-left: 5px;
+    }
+  }
+}
+.timer {
+  padding: 0 5px 0 50px;
+  margin: 0;
+  text-align: right;
+  font-size: 1.2rem;
+  cursor: default;
+  color: #d3d3d3;
+  &:hover {
+    color: #d3d3d3;
+  }
+}
